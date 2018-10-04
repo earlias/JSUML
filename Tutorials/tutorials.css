@@ -1,0 +1,28 @@
+body {
+    background-color: #99CC99;
+    font-family: Helvetica;
+}
+
+header {
+    vertical-align: middle;
+    width: 100%;
+    background-color: #0A3737;
+    color: #005a84;
+    text-align: center;
+    font-family: Helvetica;
+    letter-spacing: 0.1em;
+    font-size: 3em;
+    line-height: 1.8em;
+}
+
+ul {
+    text-align: center;
+    font-family: "Times New Roman";
+    font-size: large;
+    color: #946cff;
+}
+
+/*
+ul li:hover {
+    background-color: white;
+}*/
