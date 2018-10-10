@@ -4,7 +4,24 @@
 <meta charset="UTF-8">
 <title>Introducing Events</title>
 <link href="../_css/site.css" rel="stylesheet">
-
+<script src="../_js/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('html').dblclick(function() {
+				alert('ouch');
+            }); //end double click
+			$('a').mouseover(function() {
+			    var message = "<p>You moused over a link</p>";
+			    $('.main').append(message);
+			}); //end mouseover
+			$('#button').click(function() {
+			    $(this).val("Stop that!");
+			}); //end click
+			$('#textfield').focus(function(){
+			    $(this).css('background-color', '#FF0000')
+			});
+		}); //end ready
+	</script>
 </head>
 <body id="events">
 <div class="wrapper">
@@ -13,12 +30,12 @@
 	</header>
 	<div class="content">
 			<div class="main">
-		<h1>Introducing Events</h1>
-		<p><a href="#">A Link</a></p>
-		<form action="#" method="get">
-		<fieldset><legend>A Form</legend><p><input name="button" type="button" id="button" value="A Button"></p>
-		<p><input name="textfield" id="textfield" type="text"></p></fieldset>
-		</form>
+				<h1>Introducing Events</h1>
+				<p><a href="#">A Link</a></p>
+				<form action="#" method="get">
+				<fieldset><legend>A Form</legend><p><input name="button" type="button" id="button" value="A Button"></p>
+				<p><input name="textfield" id="textfield" type="text"></p></fieldset>
+			</form>
 		</div>
 	</div>
 	<footer>
