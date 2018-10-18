@@ -64,7 +64,11 @@
 <script src="../_js/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
- 
+ $('#open').click(function(evt) {
+		evt.preventDefault();
+		$('#login form').slideToggle(300);
+		$(this).toggleClass('close');
+	}); // end click
 }); // end ready
 </script>
 </head>
@@ -91,8 +95,8 @@ $(document).ready(function() {
 	</form>
 	</div>
 	<div class="main">
-	<h1>Slide in Login Screen</h1>
-	<p>Click the login button at the top of the page</p>
+		<h1>Slide in Login Screen</h1>
+		<p>Click the login button at the top of the page</p>
 	</div>
 	</div>
 	<footer>
