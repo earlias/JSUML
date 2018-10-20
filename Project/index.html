@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Elias Earls' Experiment in JS</title>
+    <link href="project.css" rel="stylesheet">
+    <script src="../Tutorials/_js/jquery.min.js"></script>
+    <script src="../Tutorials/_js/jquery-ui.min.js"></script>
     <script>
-        var firstname = prompt("What is your first name?", "");
-        var lastname = prompt("What is your last name?", "");
-        var color = prompt("What is your preferred color(s) to play in Magic? (Blue, Black, White, Red, Green, Colorless)", "");
+        $(document).ready(function() {
+            $('#dashboard').hover(
+                function() {
+                    $(this).stop().animate(
+                        {
+                            left: '0'
+                        },
+                        500,
+                        'easeInSine'
+                    ); // end animate
+                },
+                function() {
+                    $(this).stop().animate(
+                        {
+                            left: '-92px'
+                        },
+                        500,
+                        'easeOutBounce'
+                    ); // end animate
+                }
+            ); // end hover
+            $('#dashboard img').each(function() {
+                var imgFile = $(this).attr('src');
+                var preloadImage = new Image();
+                var imgExt = /(\.\w{3,4}$)/;
+                preloadImage.src = imgFile.replace(imgExt,'_c$1');
+                $(this).hover (
+                    function() {
+                        $(this).attr('src', preloadImage.src);
+                    },
+                    function() {
+                        $(this).attr('src', imgFile);
+                    }
+                ); // end hover
+            }); // end each
+        }); // end ready
     </script>
 </head>
 <body>
-<script>
-    document.write("Welcome, " + firstname + " " + lastname + ".</p>");
-
-    var names_colors = [[]];
-    names_colors.push(firstname, lastname, "- " + color);
-
-    var joinednames_colors = names_colors.join(" ");
-    document.write('A list of players and their preferred magic deck color(s):<p>' + joinednames_colors);
-</script>
+    <div id="dashboard">
+        <img src="Images/Mana_U.png" width="70" height="70" alt="blue">
+        <img src="Images/Mana_G.png" width="70" height="70" alt="green">
+        <img src="Images/Mana_W.png" width="70" height="70" alt="white">
+        <img src="Images/Mana_B.png" width="70" height="70" alt="black">
+        <img src="Images/Mana_R.png" width="70" height="70" alt="red">
+    </div>
 </body>
 </html>

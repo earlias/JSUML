@@ -1,0 +1,16 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#dashboard {
+    width: 110px;
+    background-color: rgb(148, 96, 48);
+    padding: 20px 20px 0 20px;
+    position: absolute;
+    left: -92px;
+    z-index: 100;
+}
+#dashboard img {
+    margin-bottom: 20px;
+}
