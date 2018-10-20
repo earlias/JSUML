@@ -4,44 +4,7 @@
     <link href="project.css" rel="stylesheet">
     <script src="../Tutorials/_js/jquery.min.js"></script>
     <script src="../Tutorials/_js/jquery-ui.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#dashboard').hover(
-                function() {
-                    $(this).stop().animate(
-                        {
-                            left: '0'
-                        },
-                        500,
-                        'easeInSine'
-                    ); // end animate
-                },
-                function() {
-                    $(this).stop().animate(
-                        {
-                            left: '-92px'
-                        },
-                        500,
-                        'easeOutBounce'
-                    ); // end animate
-                }
-            ); // end hover
-            $('#dashboard img').each(function() {
-                var imgFile = $(this).attr('src');
-                var preloadImage = new Image();
-                var imgExt = /(\.\w{3,4}$)/;
-                preloadImage.src = imgFile.replace(imgExt,'_c$1');
-                $(this).hover (
-                    function() {
-                        $(this).attr('src', preloadImage.src);
-                    },
-                    function() {
-                        $(this).attr('src', imgFile);
-                    }
-                ); // end hover
-            }); // end each
-        }); // end ready
-    </script>
+    <script src="project.js"></script>
 </head>
 <body>
     <div id="dashboard">
@@ -51,5 +14,16 @@
         <img src="Images/Mana_B.png" width="70" height="70" alt="black">
         <img src="Images/Mana_R.png" width="70" height="70" alt="red">
     </div>
+    <section>
+        Magic: The Gathering (MTG) is a collectible trading card game that was created by Richard Garfield. It was
+        released in 1993 through Wizards of the Coast, the same company that released Dungeons and Dragons. Magic, for
+        short, is played with two or more players across a variety of different formats that include different pools of
+        the over twenty-thousand cards currently in circulation. There are various different types of cards, such as
+        creatures, sorceries, and enchantments, that are all referred to as "spells." Players take turns casting spells
+        at each other or onto a board, in order to win, typically by reducing their opponent(s) to 0 life points. The
+        different types of cards come across 5 different colors; blue (U), green (G), white (W), black (B), and red (R).
+        <br><br>
+        To learn more about the colors, select one of the icons in the menu on the left.
+    </section>
 </body>
 </html>
